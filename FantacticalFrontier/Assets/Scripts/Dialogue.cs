@@ -36,7 +36,18 @@ public class Dialogue : MonoBehaviour {
     void OnGUI () {
         if (boxVisible) {
             if (leftImages != null) {
-                // TODO iterate through and draw each image with a slight offset, use GetTextureFromString
+                for (int i = 0; i < leftImages.Length; i++) {
+                    GUI.DrawTexture(new Rect(i * 150, Screen.height / 3, Screen.width / 5, Screen.height / 3),
+                        GetTextureFromString(leftImages[i]),
+                        ScaleMode.ScaleToFit);
+                }
+            }
+            if (rightImages != null) {
+                for (int i = 0; i < rightImages.Length; i++) {
+                    GUI.DrawTexture(new Rect(Screen.width - 200 - i * 150, Screen.height / 3, Screen.width / 5, Screen.height / 3),
+                        GetTextureFromString(rightImages[i]),
+                        ScaleMode.ScaleToFit);
+                }
             }
             GUI.DrawTexture(new Rect(0, Screen.height * 2 / 3, Screen.width, Screen.height / 3), dialogueBox, ScaleMode.ScaleToFit);
             GUI.Label(new Rect(0, Screen.height * 2 / 3, Screen.width, Screen.height / 3), message);
@@ -54,7 +65,20 @@ public class Dialogue : MonoBehaviour {
     }
 
     private Texture GetTextureFromString (string s) {
-        // TODO
+        switch (s) {
+            case "Bartender":
+                return bartender;
+            case "Sentinel":
+                return sentinel;
+            case "Sharpshooter":
+                return sharpshooter;
+            case "Astronomer":
+                return astronomer;
+            case "Patrol":
+                return patrol;
+            case "Zealot":
+                return zealot;
+        }
         return null;
     }
 
