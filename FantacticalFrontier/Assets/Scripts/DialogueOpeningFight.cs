@@ -29,6 +29,8 @@ public class DialogueOpeningFight : MonoBehaviour {
                 dialogueHandler.GetComponent<Dialogue>().ShowText(labels[arrayStep], messages[arrayStep], leftImages[arrayStep], rightImages[arrayStep]);
                 arrayStep++;
             }
+        } else if (arrayStep == messages.Length && !dialogueHandler.GetComponent<Dialogue>().GetBoxVisible()) {
+            Application.LoadLevel("Battle");
         }
     }
 
