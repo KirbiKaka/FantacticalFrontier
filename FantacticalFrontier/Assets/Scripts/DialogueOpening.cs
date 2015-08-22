@@ -11,6 +11,8 @@ public class DialogueOpening : MonoBehaviour {
     private int arrayStep = 0;
     // Finished with the current step. Stop sending messages until the next step.
     private bool finished = false;
+
+    private string[] labels;
     private string[] messages;
     private string[][] leftImages;
     private string[][] rightImages;
@@ -24,9 +26,11 @@ public class DialogueOpening : MonoBehaviour {
 	void Update () {
         if (messages != null && arrayStep < messages.Length) {
             if (!dialogueHandler.GetComponent<Dialogue>().GetBoxVisible()) {
-                dialogueHandler.GetComponent<Dialogue>().ShowText(messages[arrayStep], leftImages[arrayStep], rightImages[arrayStep]);
+                dialogueHandler.GetComponent<Dialogue>().ShowText(labels[arrayStep], messages[arrayStep], leftImages[arrayStep], rightImages[arrayStep]);
                 arrayStep++;
             }
+        } else if (arrayStep == messages.Length && !dialogueHandler.GetComponent<Dialogue>().GetBoxVisible()) {
+            Application.LoadLevel("OpeningFight");
         }
 	}
 
@@ -39,19 +43,151 @@ public class DialogueOpening : MonoBehaviour {
     private void LoadMessages (int s) {
         switch (s) {
             case 0:
-                messages = new string[2];
-                rightImages = new string[2][];
-                leftImages = new string[2][];
-                messages[0] = "TESTESTESTESTETSTEESD";
-                leftImages[0] = new string[2];
-                leftImages[0][0] = "Bartender";
-                leftImages[0][1] = "Sentinel";
-                rightImages[0] = new string[1];
-                rightImages[0][0] = "Sharpshooter";
-                messages[1] = "EVENMORE";
-                rightImages[1] = new string[2];
-                rightImages[1][0] = "Sharpshooter";
-                rightImages[1][1] = "Bartender";
+                // Set this to the number of messages.
+                int num_messages = 17;
+                labels = new string[num_messages];
+                messages = new string[num_messages];
+                rightImages = new string[num_messages][];
+                leftImages = new string[num_messages][];
+                int i = 0;
+
+                labels[i] = "Sylia";
+                messages[i] = "...I won't have you overstepping the line!";
+                leftImages[i] = new string[1];
+                leftImages[i][0] = "Astronomer_L_M";
+
+                i = 1;
+                labels[i] = "Roven";
+                messages[i] = "Please, I simply--";
+                leftImages[i] = new string[1];
+                leftImages[i][0] = "Astronomer_L";
+                rightImages[i] = new string[1];
+                rightImages[i][0] = "Sentinel_L_M";
+
+                i = 2;
+                labels[i] = "Sylia";
+                messages[i] = "Need I remind you just exactly WHICH of us is the King's adviser?";
+                leftImages[i] = new string[1];
+                leftImages[i][0] = "Astronomer_R_M";
+                rightImages[i] = new string[1];
+                rightImages[i][0] = "Sentinel_L";
+
+                i = 3;
+                labels[i] = "Roven";
+                messages[i] = "ONE of the King's advisers.";
+                leftImages[i] = new string[1];
+                leftImages[i][0] = "Astronomer_R";
+                rightImages[i] = new string[1];
+                rightImages[i][0] = "Sentinel_L_M";
+
+                i = 4;
+                labels[i] = "Roven";
+                messages[i] = "There have simply been too many cultist sightings to ignore! We must act quickly before their plan is realized!";
+                leftImages[i] = new string[1];
+                leftImages[i][0] = "Astronomer_R";
+                rightImages[i] = new string[1];
+                rightImages[i][0] = "Sentinel_L_M";
+
+                i = 5;
+                labels[i] = "Sylia";
+                messages[i] = "Why are you telling me things I already know, and being so cryptic at the same time? Who is this exposition dump for?";
+                leftImages[i] = new string[1];
+                leftImages[i][0] = "Astronomer_R_M";
+                rightImages[i] = new string[1];
+                rightImages[i][0] = "Sentinel_L";
+
+                i = 6;
+                labels[i] = "Roven";
+                messages[i] = "Well you never know who may be listening. I'm just trying to build suspense.";
+                leftImages[i] = new string[1];
+                leftImages[i][0] = "Astronomer_R";
+                rightImages[i] = new string[1];
+                rightImages[i][0] = "Sentinel_L_M";
+
+                i = 7;
+                labels[i] = "Sylia";
+                messages[i] = "Oh shut up, Roven. Stop bothering me about these \"spooooky\" cultists of yours. If they truly are a problem, isn't it the job of YOUR men to deal with it?";
+                leftImages[i] = new string[1];
+                leftImages[i][0] = "Astronomer_R_M";
+                rightImages[i] = new string[1];
+                rightImages[i][0] = "Sentinel_L";
+
+                i = 8;
+                labels[i] = "Roven";
+                messages[i] = "This isn't a joke, Sylia!";
+                leftImages[i] = new string[1];
+                leftImages[i][0] = "Astronomer_R";
+                rightImages[i] = new string[1];
+                rightImages[i][0] = "Sentinel_L_M";
+
+                i = 9;
+                labels[i] = "Roven";
+                messages[i] = "Also, I sent you a letter ONE time! I had to send it to 10 people or else the spooky ghost--";
+                leftImages[i] = new string[1];
+                leftImages[i][0] = "Astronomer_R";
+                rightImages[i] = new string[1];
+                rightImages[i][0] = "Sentinel_L_M";
+
+                i = 10;
+                labels[i] = null;
+                messages[i] = "*CRASH*";
+                leftImages[i] = new string[1];
+                leftImages[i][0] = "Astronomer_R";
+                rightImages[i] = new string[1];
+                rightImages[i][0] = "Sentinel_L";
+
+                i = 11;
+                labels[i] = "Sylia";
+                messages[i] = "What was...";
+                leftImages[i] = new string[1];
+                leftImages[i][0] = "Astronomer_L_M";
+                rightImages[i] = new string[1];
+                rightImages[i][0] = "Sentinel_R";
+
+                i = 12;
+                labels[i] = "Guard";
+                messages[i] = "S-Sir! They're here!";
+                leftImages[i] = new string[2];
+                leftImages[i][0] = "Sentinel_R";
+                leftImages[i][1] = "Astronomer_R";
+                rightImages[i] = new string[1];
+                rightImages[i][0] = "Patrol_L_M";
+
+                i = 13;
+                labels[i] = "Guard";
+                messages[i] = "Martha! What happened to you?!";
+                leftImages[i] = new string[2];
+                leftImages[i][0] = "Sentinel_R_M";
+                leftImages[i][1] = "Astronomer_R";
+                rightImages[i] = new string[1];
+                rightImages[i][0] = "Patrol_L";
+
+                i = 14;
+                labels[i] = "Guard";
+                messages[i] = "N-No time... Just go... without me!";
+                leftImages[i] = new string[2];
+                leftImages[i][0] = "Sentinel_R";
+                leftImages[i][1] = "Astronomer_R";
+                rightImages[i] = new string[1];
+                rightImages[i][0] = "Patrol_L_M";
+
+                i = 15;
+                labels[i] = "Sylia";
+                messages[i] = "We have to get going. The king could be in danger!";
+                leftImages[i] = new string[2];
+                leftImages[i][0] = "Sentinel_R";
+                leftImages[i][1] = "Astronomer_R_M";
+                rightImages[i] = new string[1];
+                rightImages[i][0] = "Patrol_L";
+
+                i = 16;
+                labels[i] = "Roven";
+                messages[i] = "Agreed. Get to safety, Martha!";
+                leftImages[i] = new string[2];
+                leftImages[i][0] = "Sentinel_R_M";
+                leftImages[i][1] = "Astronomer_R";
+                rightImages[i] = new string[1];
+                rightImages[i][0] = "Patrol_L";
                 break;
         }
     }

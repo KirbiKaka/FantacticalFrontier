@@ -1,10 +1,23 @@
 fileFormatVersion: 2
 guid: 23ef4e249289ca344a310d854654a53f
-timeCreated: 1427155576
+timeCreated: 1427245775
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - dialogueBox: {fileID: 2800000, guid: 4bf2ea20e1c2ee94d9e6b04b885f4d14, type: 3}
+  - sentinel_R: {fileID: 2800000, guid: 9b08ccc1ae554b44cb4c1ca3298eaf28, type: 3}
+  - sentinel_L: {fileID: 2800000, guid: 6c7c1ffca99d1ca42b8c427a45b16cd3, type: 3}
+  - bartender_R: {fileID: 2800000, guid: e790b3419b3473c4f8f17a1570ce40f7, type: 3}
+  - bartender_L: {fileID: 2800000, guid: 32dd252f0c170e048b5992f5a8039c2f, type: 3}
+  - astronomer_R: {fileID: 2800000, guid: d1017c94b3c6dfc47a732b4f43e9316a, type: 3}
+  - astronomer_L: {fileID: 2800000, guid: ff426f1c55291f742acd3a9d4bcedea4, type: 3}
+  - patrol_R: {fileID: 2800000, guid: cffc38c784882ff4aa7768b684d34f24, type: 3}
+  - patrol_L: {fileID: 2800000, guid: 951b275c3e2beb0499a731aca0dc3253, type: 3}
+  - sharpshooter_R: {fileID: 2800000, guid: 6aae27607d8742c4f92c6aaff7097660, type: 3}
+  - sharpshooter_L: {fileID: 2800000, guid: f46c01c5c0e7a404281327617e9ddba4, type: 3}
+  - zealot_R: {fileID: 2800000, guid: 0545545a41fb8104898b8e26a99f2145, type: 3}
+  - zealot_L: {fileID: 2800000, guid: 45a575ed2d6270545b13d6d2e536518a, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
