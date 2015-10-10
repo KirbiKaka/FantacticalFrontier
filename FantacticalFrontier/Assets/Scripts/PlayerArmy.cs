@@ -12,14 +12,15 @@ public class PlayerArmy : MonoBehaviour {
     };
 
     public static readonly int MAX_HEROES = 20;
+    public static readonly int MAX_ACTIVE_HEROES = 5;
 
-    private static List<Hero> heroesList;
+    private static List<Hero> heroesList = new List<Hero>(MAX_HEROES);
+    private static List<Hero> activeHeroes = new List<Hero>(MAX_ACTIVE_HEROES);
 
     void Awake () {
-        heroesList = new List<Hero>(20);
     }
 
-	void Start () {
+    void Start () {
 	}
 	
 	void Update () {
@@ -31,6 +32,10 @@ public class PlayerArmy : MonoBehaviour {
 
     public static List<Hero> GetHeroList () {
         return heroesList;
+    }
+
+    public static List<Hero> GetActiveHeroes () {
+        return activeHeroes;
     }
 
     public static int HeroTypeToInt (HeroType type) {

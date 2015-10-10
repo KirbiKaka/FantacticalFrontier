@@ -1,36 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Hero : MonoBehaviour {
+public class Hero {
 
     public string name;
     public PlayerArmy.HeroType type;
     public int level;
 
-    private bool visible = false;
+    public int hpMax;
+    private int hpCurr;
 
-	// Use this for initialization
-	void Start () {
-        
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    // Use this for initialization
+    void Start () {
 
-    public bool GetVisible () {
-        return visible;
     }
 
-    public void SetVisible (bool vis) {
-        visible = vis;
-        if (transform.GetComponent<SpriteRenderer>() != null) {
-            if (visible) {
-                transform.GetComponent<SpriteRenderer>().enabled = true;
-            } else {
-                transform.GetComponent<SpriteRenderer>().enabled = false;
-            }
-        }
+    public void Initialize (string name, PlayerArmy.HeroType type) {
+        this.name = name;
+        this.type = type;
+        hpMax = 10;
+        hpCurr = hpMax;
+    }
+
+    // Update is called once per frame
+    void Update () {
+
     }
 }

@@ -5,9 +5,6 @@ public class DialogueOpening : MonoBehaviour {
 
     public GameObject dialogueHandler;
 
-    public Transform astronomerPrefab;
-    public Transform sentinelPrefab;
-
     // The current step of dialogue. One array of messages.
     private int step = 0;
     // The current step in the array of messages.
@@ -24,13 +21,13 @@ public class DialogueOpening : MonoBehaviour {
 	void Start () {
         LoadMessages(step);
 
-        // ADD THE TWO DEFAULT HEROES
-        Transform astro = Instantiate(astronomerPrefab);
-        astro.name = "Sylvia";
-        PlayerArmy.AddHero(astro.GetComponent<Hero>());
-        Transform senti = Instantiate(sentinelPrefab);
-        senti.name = "Rowen";
-        PlayerArmy.AddHero(senti.GetComponent<Hero>());
+        Hero astro = new Hero();
+        astro.Initialize("Sylvia", PlayerArmy.HeroType.Astronomer);
+        PlayerArmy.AddHero(astro);
+
+        Hero senti = new Hero();
+        senti.Initialize("Rowen", PlayerArmy.HeroType.Sentinel);
+        PlayerArmy.AddHero(senti);
 	}
 	
 	// Update is called once per frame
