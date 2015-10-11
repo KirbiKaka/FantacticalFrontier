@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: ee9c0bd2af65bf343b784ed35b85aa6c
+timeCreated: 1444524932
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - SENTINEL_IDLE: {fileID: 21300000, guid: 9b08ccc1ae554b44cb4c1ca3298eaf28, type: 3}
+  - HUNTSMAN_IDLE: {instanceID: 0}
+  - JOUSTER_IDLE: {instanceID: 0}
+  - PATROL_IDLE: {fileID: 21300000, guid: cffc38c784882ff4aa7768b684d34f24, type: 3}
+  - SHARPSHOOTER_IDLE: {fileID: 21300000, guid: 6aae27607d8742c4f92c6aaff7097660,
+      type: 3}
+  - DIVINER_IDLE: {instanceID: 0}
+  - BARTENDER_IDLE: {fileID: 21300000, guid: e790b3419b3473c4f8f17a1570ce40f7, type: 3}
+  - ASTRONOMER_IDLE: {fileID: 21300000, guid: d1017c94b3c6dfc47a732b4f43e9316a, type: 3}
+  - ZEALOT_IDLE: {fileID: 21300000, guid: 0545545a41fb8104898b8e26a99f2145, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Hero {
 
@@ -7,7 +8,10 @@ public class Hero {
     public PlayerArmy.HeroType type;
     public int level;
 
-    public int hpMax;
+    List<Sprite> heroSprites = new List<Sprite>();
+    Sprite currentSprite;
+
+    private int hpMax;
     private int hpCurr;
 
     // Use this for initialization
@@ -20,6 +24,24 @@ public class Hero {
         this.type = type;
         hpMax = 10;
         hpCurr = hpMax;
+        LoadSprites();
+    }
+
+    void LoadSprites () {
+        switch (type) {
+            case PlayerArmy.HeroType.Sentinel:
+                heroSprites.Add(Resources.Load<Sprite>("CharacterSprites/Sentinel TEMP"));
+                currentSprite = heroSprites[0];
+                break;
+            case PlayerArmy.HeroType.Astronomer:
+                heroSprites.Add(Resources.Load<Sprite>("CharacterSprites/Astronomer TEMP"));
+                currentSprite = heroSprites[0];
+                break;
+        }
+    }
+
+    public Sprite GetCurrentSprite () {
+        return currentSprite;
     }
 
     // Update is called once per frame

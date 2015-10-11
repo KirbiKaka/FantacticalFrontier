@@ -28,6 +28,9 @@ public class DialogueOpening : MonoBehaviour {
         Hero senti = new Hero();
         senti.Initialize("Rowen", PlayerArmy.HeroType.Sentinel);
         PlayerArmy.AddHero(senti);
+
+        PlayerArmy.SetHeroActive(PlayerArmy.GetHero(0));
+        PlayerArmy.SetHeroActive(PlayerArmy.GetHero(1));
 	}
 	
 	// Update is called once per frame

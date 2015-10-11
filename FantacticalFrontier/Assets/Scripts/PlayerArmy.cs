@@ -27,7 +27,31 @@ public class PlayerArmy : MonoBehaviour {
 	}
 
     public static void AddHero (Hero addition) {
-        heroesList.Add(addition);
+        if (heroesList.Count < MAX_HEROES) {
+            heroesList.Add(addition);
+        } else {
+            Debug.LogError("Number of heroes is at maximum capacity.");
+        }
+    }
+
+    public static void SetHeroActive (Hero addition) {
+        if (activeHeroes.Count < MAX_ACTIVE_HEROES) {
+            activeHeroes.Add(addition);
+        } else {
+            Debug.LogError("Already have maximum number of active heroes.");
+        }
+    }
+
+    /** Return a hero at the i-th index in heroesList. */
+    public static Hero GetHero (int i) {
+        if (heroesList[i] != null) {
+            return heroesList[i];
+        }
+        return null;
+    }
+
+    public static void ClearActiveHeroes () {
+        activeHeroes.Clear();
     }
 
     public static List<Hero> GetHeroList () {
