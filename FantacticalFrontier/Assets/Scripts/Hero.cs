@@ -11,6 +11,7 @@ public class Hero {
     List<Sprite> heroSprites = new List<Sprite>();
     Sprite currentSprite;
 
+    public int movesLeft = 1;
     private int hpMax;
     private int hpCurr;
 
@@ -30,11 +31,11 @@ public class Hero {
     void LoadSprites () {
         switch (type) {
             case PlayerArmy.HeroType.Sentinel:
-                heroSprites.Add(Resources.Load<Sprite>("CharacterSprites/Sentinel TEMP"));
+                heroSprites.Add(Resources.Load<Sprite>("CharacterSprites/Sentinel Icon"));
                 currentSprite = heroSprites[0];
                 break;
             case PlayerArmy.HeroType.Astronomer:
-                heroSprites.Add(Resources.Load<Sprite>("CharacterSprites/Astronomer TEMP"));
+                heroSprites.Add(Resources.Load<Sprite>("CharacterSprites/Stormbringer Icon"));
                 currentSprite = heroSprites[0];
                 break;
         }
@@ -48,4 +49,5 @@ public class Hero {
     void Update () {
 
     }
+
 }
